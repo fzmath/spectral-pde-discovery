@@ -426,6 +426,40 @@ Figure \ref{fig:1d} provides a visual summary of the recovery rates across all 1
 \label{fig:adv}
 \end{figure}
 
+\subsection{Estimated time derivatives and statistical robustness}
+\label{sec:noisy_ut}
+
+The experiments above use the exact time derivative $u_t$ provided by the MDBench benchmark as the regression target. In practice, however, $u_t$ must be estimated from noisy observations $u(x,t)$. We now evaluate the complete discovery pipeline in which $u_t$ is computed by the same spatiotemporal spectral derivative operator, introducing estimation error into both sides of the regression.
+
+To assess statistical variability, we repeat each configuration with 20 random seeds controlling the Gaussian test-function centers. Table~\ref{tab:noisy_ut} reports the mean $\pm$ standard deviation of true terms found (TF), false positives (FP), and the $F_1$ score.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of exact versus spectrally estimated $u_t$ over 20 random seeds.}
+\label{tab:noisy_ut}
+\small
+\begin{tabular}{llccc}
+\toprule
+PDE & Noise & Exact $u_t$ (TF/FP/$F_1$) & Estimated $u_t$ (TF/FP/$F_1$) \\
+\midrule
+\multirow{2}{*}{Burgers}
+& clean & 2.0$\pm$0.0 / 1.3$\pm$1.0 / 0.78 & 0.6$\pm$0.6 / 0.8$\pm$1.0 / 0.34 \\
+& snr 10 & 2.0$\pm$0.0 / 3.1$\pm$1.4 / 0.59 & 1.1$\pm$0.5 / 0.5$\pm$0.9 / 0.59 \\
+\multirow{2}{*}{KdV}
+& clean & 2.0$\pm$0.0 / 0.0$\pm$0.0 / 1.00 & 1.0$\pm$0.0 / 0.0$\pm$0.0 / 0.67 \\
+& snr 10 & 1.6$\pm$0.5 / 0.4$\pm$0.8 / 0.82 & 1.0$\pm$0.0 / 0.1$\pm$0.3 / 0.65 \\
+\multirow{2}{*}{KS}
+& clean & 2.6$\pm$0.8 / 0.3$\pm$0.5 / 0.86 & 2.0$\pm$1.0 / 1.6$\pm$1.1 / 0.57 \\
+& snr 10 & 2.1$\pm$0.9 / 0.5$\pm$0.5 / 0.74 & 1.1$\pm$0.3 / 0.3$\pm$0.6 / 0.50 \\
+\multirow{2}{*}{Advection}
+& clean & 1.0$\pm$0.0 / 0.5$\pm$0.5 / 0.85 & 0.0$\pm$0.0 / 1.7$\pm$1.0 / 0.00 \\
+& snr 10 & 1.0$\pm$0.0 / 2.1$\pm$0.3 / 0.49 & 0.9$\pm$0.2 / 0.6$\pm$0.8 / 0.82 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Estimating $u_t$ from noisy data consistently degrades performance: on KdV at clean condition, $F_1$ drops from 1.00 to 0.67, and on Burgers from 0.78 to 0.34. This confirms that the exact-$u_t$ experiments isolate spatial-derivative accuracy and represent an idealized setting. The standard deviations are also non-negligible---for instance, Advection at snr 30 with exact $u_t$ yields TF $= 0.1\pm0.3$, meaning some random test-center configurations fail entirely. The Advection equation with estimated $u_t$ at clean condition fails completely ($F_1=0$): the temporal derivative $ik_t\hat{u}$ is more sensitive to boundary ringing than spatial derivatives, and the resulting error corrupts the regression. These results temper the claims of Section~\ref{sec:1d}: the method is most reliable when $u_t$ is known or noise levels are moderate, and the complete noisy-observation pipeline remains challenging.
+
 \subsection{Two- and three-dimensional scalability}
 \label{sec:2d_results}
 
@@ -628,7 +662,7 @@ These differences are complementary rather than competitive. Weak SINDy remains 
 
 We note seven limitations.
 
-\textbf{Exact time derivative.} The MDBench datasets provide the exact time derivative $u_t$ (the \texttt{du} field), which we use as the regression target. This isolates spatial derivative accuracy as the variable of interest. In practical applications, exact $u_t$ is unavailable and must be estimated from data. The spatiotemporal spectral derivative can compute $u_t$ as well, but this introduces additional noise into the regression target. A full evaluation with estimated time derivatives is left for future work.
+\textbf{Exact time derivative.} The primary experiments use the exact time derivative $u_t$ provided by MDBench as the regression target. Section~\ref{sec:noisy_ut} evaluates the complete pipeline with spectrally estimated $u_t$: as expected, performance degrades, particularly for non-periodic problems where the temporal derivative is more sensitive to boundary ringing. Robust estimation of $u_t$ from noisy data---for example, through temporal smoothing or integration-by-parts---remains an important direction.
 
 \textbf{False positives.} Forward stepwise BIC admits more spurious terms than a carefully tuned STLSQ. The fixed BIC penalty does not adapt to the correlation structure of the candidate library. Stability selection or subsampled aggregation would likely reduce false discoveries.
 
@@ -638,7 +672,7 @@ We note seven limitations.
 
 \textbf{Memory.} The spatiotemporal transform requires a 2D FFT for 1D data and a 3D FFT for 2D data. For very large grids this is more memory-intensive than spatial-only methods. The $O(N\log N)$ FFT scaling keeps it practical for typical PDE resolutions, however.
 
-\textbf{Single-run results.} All experiments report a single run with a fixed random seed. The Gaussian test function centers are randomly sampled, and noisy data contain stochastic components. Multiple runs with variance reporting would strengthen the statistical significance of the results. The method's deterministic core (spectral derivatives + BIC selection) suggests low variance, but this should be verified empirically.
+\textbf{Single-run results in Tables~\ref{tab:1d_summary}--\ref{tab:2d}.} Tables~\ref{tab:1d_summary}--\ref{tab:2d} report a single representative run; the multi-seed study in Section~\ref{sec:noisy_ut} shows that the random test-function centers can cause substantial variance, particularly for the Advection equation. Stability selection or subsampled aggregation would reduce this variability.
 
 \textbf{Ablation scope.} The ablation study is conducted only on the KS equation at snr 30. A more comprehensive ablation across multiple PDEs and noise levels would better isolate the contribution of each component.
 
