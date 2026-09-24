@@ -138,9 +138,9 @@ We now provide theoretical justification for the key components of the proposed 
 
 \subsubsection{Spectral accuracy of spatiotemporal derivatives}
 
-\begin{proposition}[Spectral convergence]
+\begin{proposition}[Spectral convergence for periodic smooth functions]
 \label{prop:spectral}
-Let $u(x,t) \in C^\infty([0,L_x]\times[0,L_t])$ be a smooth function with Fourier coefficients $\hat{u}(k_x,k_t)$ decaying faster than any polynomial: for every $q>0$, there exists $C_q>0$ such that $|\hat{u}(k_x,k_t)| \le C_q (1+|k_x|+|k_t|)^{-q}$. Then the spatiotemporal spectral derivative of order $m$ satisfies
+Let $u(x,t) \in C^\infty([0,L_x]\times[0,L_t])$ be a smooth periodic function with Fourier coefficients $\hat{u}(k_x,k_t)$ decaying faster than any polynomial: for every $q>0$, there exists $C_q>0$ such that $|\hat{u}(k_x,k_t)| \le C_q (1+|k_x|+|k_t|)^{-q}$. Then the spatiotemporal spectral derivative of order $m$ satisfies
 \begin{equation}
 \|\partial_x^m u - \mathcal{D}_x^m u_N\|_\infty \le C_{m,q} N_x^{-q} + C_\phi \epsilon_{\mathrm{tol}},
 \end{equation}
@@ -175,29 +175,29 @@ E_{\mathrm{filter}} \le \sum_{(k_x,k_t)\in K_N} |k_x|^m |1-\phi|\,|\hat{u}| \le 
 where the last step follows from the Fourier inversion formula and the triangle inequality. Setting $C_\phi=\|\partial_x^m u\|_{L^1}$ completes the proof.
 \end{proof}
 
-This result contrasts with finite difference methods, whose $m$-th order derivative error is $O(\Delta x^p)$ for a $p$-th order scheme, requiring increasingly fine grids for high-order derivatives.
+This result holds for periodic smooth functions. For non-periodic data, periodic extension introduces boundary discontinuities and the Fourier coefficients decay algebraically rather than super-algebraically; the rate $N_x^{-q}$ no longer applies. The non-periodic case is addressed separately through the traveling-wave concentration analysis (Proposition~\ref{prop:traveling}) and the empirical filtering experiments. For periodic problems, the spectral result contrasts with finite differences, whose $m$-th order error is $O(\Delta x^p)$ for a $p$-th order scheme.
 
 \subsubsection{Traveling wave solutions and non-periodic problems}
 
-\begin{proposition}[Traveling wave exactness]
+\begin{proposition}[Spectral concentration of traveling waves]
 \label{prop:traveling}
 Let $u(x,t) = f(x - ct)$ be a traveling wave solution with speed $c$, where $f$ is smooth and compactly supported within the spatial domain. Then the spatiotemporal Fourier transform satisfies
 \begin{equation}
 \hat{u}(k_x, k_t) = \hat{f}(k_x) \cdot \delta(k_t + c k_x),
 \end{equation}
-where $\delta$ denotes the Dirac distribution. Consequently, the spectral energy concentrates along the line $k_t = -c k_x$ in the frequency plane. The two-dimensional low-pass filter $\phi(k_x,k_t)$ preserves this energy. It suppresses the Gibbs artifacts that arise from the spatial discontinuity at the domain boundary.
+where $\delta$ denotes the Dirac distribution. The spectral energy concentrates entirely on the line $k_t = -c k_x$ in the frequency plane.
 \end{proposition}
 
 \begin{proof}
 Substituting $u(x,t)=f(x-ct)$ into the Fourier transform gives
 $\hat{u}(k_x,k_t) = \int\int f(x-ct) e^{-i(k_x x + k_t t)} dx dt$.
 Changing variables $\xi = x-ct$ yields $\hat{u}(k_x,k_t) = \hat{f}(k_x) \int e^{-i(k_t + c k_x)t} dt = 2\pi \hat{f}(k_x) \delta(k_t + c k_x)$.
-Thus all spectral energy lies on the characteristic line $k_t = -ck_x$. The spatial-only transform $\hat{f}(k_x)$ suffers from Gibbs ringing because $f$ is non-periodic on $[0,L_x]$, but in the spatiotemporal domain, the energy is concentrated along a one-dimensional manifold, and the two-dimensional filter can suppress the boundary-induced high-frequency components without distorting the signal along the characteristic direction.
+Thus all spectral energy lies on the characteristic line $k_t = -ck_x$. This concentration property is exact for an ideal traveling wave; it does not by itself guarantee that a separable low-pass filter preserves the signal while removing boundary artifacts, which depends on the filter cutoff relative to the spectrum of $\hat{f}(k_x)$.
 \end{proof}
 
-Proposition \ref{prop:traveling} explains why the spatiotemporal approach succeeds on the advection equation where spatial-only spectral methods fail. The traveling wave structure is naturally represented in the two-dimensional frequency domain. The Gibbs artifacts are separable from the signal.
+Proposition~\ref{prop:traveling} characterizes the spectral concentration of traveling waves. In practice, the exponential filter with cutoff $k_c=0.6k_{\max}$ preserves the dominant low-frequency portion along the characteristic line while attenuating boundary-induced high-frequency energy. This filtering mechanism is validated empirically in Section~\ref{sec:experiments}.
 
-This is a key distinction from spatial-only spectral methods. A spatial-only transform computes $\hat{u}(k_x) = \int u(x,t) e^{-ik_x x} dx$ at each time slice independently. For a non-periodic traveling wave, each slice exhibits Gibbs ringing at the boundaries. The ringing contaminates the derivative computation at every time step. In contrast, the spatiotemporal transform exploits the correlation across time. The signal energy concentrates along a one-dimensional manifold in the 2D frequency plane. The boundary-induced noise spreads isotropically in frequency space. A 2D low-pass filter can therefore remove the noise while preserving the signal along the characteristic direction. This mechanism is not available to spatial-only methods.
+The distinction from spatial-only methods is as follows. A spatial-only transform computes $\hat{u}(k_x)$ at each time slice independently; for a non-periodic traveling wave, each slice exhibits Gibbs ringing at the boundaries. The spatiotemporal transform instead exploits the temporal correlation: the signal lies along $k_t=-ck_x$, and the 2D filter removes energy away from this region. Figure~\ref{fig:adv} provides a visual comparison.
 
 \subsubsection{Consistency of BIC model selection}
 
@@ -224,10 +224,10 @@ with probability tending to one, since $\log N\to\infty$.
 \end{equation}
 for sufficiently large $N$.
 
-Since every overfitting and underfitting model has strictly larger BIC than $S^*$, the global BIC minimizer is $S^*$. The forward stepwise algorithm is a greedy search: at each step it adds the variable that most reduces BIC. The minimum coefficient condition ensures that every true variable produces a BIC decrease when added, so the greedy path includes $S^*$ before stopping. Therefore $\hat{S}_{\mathrm{BIC}}=S^*$ with probability tending to one.
+Since every overfitting and underfitting model has strictly larger BIC than $S^*$, the global BIC minimizer is $S^*$ with probability tending to one. The forward stepwise algorithm is a greedy search that approximates this global minimizer: at each step it adds the variable that most reduces BIC. Under the minimum coefficient condition, each true variable produces a BIC decrease when added to the true support, which supports the greedy path in recovering $S^*$. We note, however, that greedy consistency requires additional conditions beyond global BIC consistency---particularly when candidate variables are highly correlated, the greedy path may select a correlated proxy instead of the true variable. The forward stepwise procedure should therefore be viewed as an efficient heuristic whose recovery guarantees are weaker than exhaustive BIC minimization; this is consistent with our empirical observation of occasional false positives.
 \end{proof}
 
-Proposition \ref{prop:bic} justifies the use of BIC for model selection in our framework: as the number of data points increases (which is typical for PDE data on fine grids), BIC reliably identifies the correct sparse set of terms. The forward stepwise algorithm provides an efficient greedy approximation to the exhaustive BIC optimization.
+Proposition~\ref{prop:bic} establishes consistency of the global BIC minimizer under standard conditions. The forward stepwise algorithm provides an efficient greedy approximation; in practice it identifies the correct support on the tested benchmarks, though occasional false positives occur as noted in Section~\ref{sec:discussion}.
 
 \subsection{Feature normalization}
 \label{sec:norm}
