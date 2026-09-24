@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "H:\2026科研\Spectral-PDE-Discovery\code\plot_figures.py", line 58, in <module>
+    r = results_1d['1d'][pde][noise][method]
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'SPD (ours)'

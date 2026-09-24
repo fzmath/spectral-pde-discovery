@@ -1,0 +1,215 @@
+{
+  "burgers": {
+    "clean": {
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": 1,
+      "found_terms": [
+        "u*u_x",
+        "uxx"
+      ],
+      "time": 0.16555356979370117
+    },
+    "snr_40": {
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": 6,
+      "found_terms": [
+        "u*u_x",
+        "u^2",
+        "ux",
+        "u",
+        "u^2*u_x",
+        "uxx",
+        "u*u_xx"
+      ],
+      "time": 0.18351435661315918
+    },
+    "snr_30": {
+      "true_found": 0,
+      "total_true": 2,
+      "false_positives": 5,
+      "found_terms": [
+        "ux",
+        "u^2",
+        "u",
+        "u^2*u_x",
+        "u*u_xx"
+      ],
+      "time": 0.17851614952087402
+    },
+    "snr_20": {
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": 4,
+      "found_terms": [
+        "ux",
+        "u^2",
+        "u",
+        "u*u_x",
+        "u^2*u_x"
+      ],
+      "time": 0.16854572296142578
+    },
+    "snr_10": {
+      "true_found": 0,
+      "total_true": 2,
+      "false_positives": 3,
+      "found_terms": [
+        "u^2",
+        "ux",
+        "u"
+      ],
+      "time": 0.13164281845092773
+    }
+  },
+  "kdv": {
+    "clean": {
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": 3,
+      "found_terms": [
+        "ux",
+        "u*u_x",
+        "uxxx",
+        "u^2*u_x"
+      ],
+      "time": 0.4697446823120117
+    },
+    "snr_40": {
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": 2,
+      "found_terms": [
+        "ux",
+        "u*u_x",
+        "u^2*u_x"
+      ],
+      "time": 0.5993955135345459
+    },
+    "snr_30": {
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": 2,
+      "found_terms": [
+        "ux",
+        "u*u_x",
+        "u^2*u_x"
+      ],
+      "time": 0.6711990833282471
+    },
+    "snr_20": {
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": 2,
+      "found_terms": [
+        "ux",
+        "u^2*u_x",
+        "u*u_x"
+      ],
+      "time": 0.713050365447998
+    },
+    "snr_10": {
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": 1,
+      "found_terms": [
+        "ux",
+        "u*u_x"
+      ],
+      "time": 0.6791846752166748
+    }
+  },
+  "kuramoto_sivishinky": {
+    "clean": {
+      "true_found": 1,
+      "total_true": 3,
+      "false_positives": 2,
+      "found_terms": [
+        "u*u_x",
+        "uxxxx",
+        "uxx"
+      ],
+      "time": 2.487600326538086
+    },
+    "snr_40": {
+      "true_found": 1,
+      "total_true": 3,
+      "false_positives": 2,
+      "found_terms": [
+        "u*u_x",
+        "uxx",
+        "u"
+      ],
+      "time": 1.6785120964050293
+    },
+    "snr_30": {
+      "true_found": 1,
+      "total_true": 3,
+      "false_positives": 0,
+      "found_terms": [
+        "u*u_x"
+      ],
+      "time": 1.7862272262573242
+    },
+    "snr_20": {
+      "true_found": 1,
+      "total_true": 3,
+      "false_positives": 0,
+      "found_terms": [
+        "u*u_x"
+      ],
+      "time": 0.7031598091125488
+    },
+    "snr_10": {
+      "true_found": 0,
+      "total_true": 3,
+      "false_positives": 0,
+      "found_terms": [],
+      "time": 0.6961450576782227
+    }
+  },
+  "advection1d": {
+    "clean": {
+      "true_found": 0,
+      "total_true": 1,
+      "false_positives": 1,
+      "found_terms": [
+        "ux"
+      ],
+      "time": 0.21343302726745605
+    },
+    "snr_40": {
+      "true_found": 0,
+      "total_true": 1,
+      "false_positives": 3,
+      "found_terms": [
+        "ux",
+        "u^2*u_x",
+        "u*u_x"
+      ],
+      "time": 0.6123230457305908
+    },
+    "snr_30": {
+      "true_found": 0,
+      "total_true": 1,
+      "false_positives": 0,
+      "found_terms": [],
+      "time": 0.32915449142456055
+    },
+    "snr_20": {
+      "true_found": 0,
+      "total_true": 1,
+      "false_positives": 0,
+      "found_terms": [],
+      "time": 0.28921985626220703
+    },
+    "snr_10": {
+      "true_found": 0,
+      "total_true": 1,
+      "false_positives": 0,
+      "found_terms": [],
+      "time": 0.36003756523132324
+    }
+  }
+}

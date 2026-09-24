@@ -1,0 +1,51 @@
+\documentclass[12pt]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\begin{letter}{Editor-in-Chief\\
+Applied Mathematics and Computation}
+
+\opening{Dear Editor,}
+
+We are pleased to submit our manuscript entitled \textbf{``Spatiotemporal spectral derivatives with forward stepwise BIC for robust partial differential equation discovery''} by Fuchang Wang and Huirong Cao for consideration as a regular article in \textit{Applied Mathematics and Computation}.
+
+\textbf{Motivation.} Data-driven discovery of partial differential equations (PDEs) from noisy simulation or experimental data has attracted substantial recent interest. However, two persistent barriers limit practical deployment: (i) computing high-order spatial derivatives (e.g., $u_{xxxx}$) from noisy data amplifies noise catastrophically, and (ii) standard sparse regression solvers such as STLSQ require manual threshold tuning that is problem-dependent and noise-sensitive. Existing spectral methods, while spectrally accurate, assume periodic boundaries and fail on non-periodic solutions due to Gibbs ringing.
+
+\textbf{Our contributions.} We propose a framework that addresses both barriers through three interconnected components:
+
+\begin{enumerate}
+\item \textbf{Spatiotemporal spectral derivatives (algorithm innovation).} Instead of applying the Fourier transform slice-by-slice in space, we compute a single two-dimensional transform over the joint space-time domain. This exploits the traveling-wave structure of PDE solutions: the spectral energy of a wave $u(x,t)=f(x-ct)$ concentrates along the characteristic line $k_t=-ck_x$, while boundary-induced Gibbs noise spreads isotropically. A 2D low-pass filter then separates signal from noise. We prove (Proposition~2) that the spectrum of a traveling wave lies on a one-dimensional manifold, making this separation mathematically principled rather than empirical.
+
+\item \textbf{Spectral weak formulation (robustness innovation).} Rather than computing derivatives pointwise and then regressing, we formulate the discovery problem in weak form: both sides of the PDE are integrated against localized Gaussian test functions before regression. This integration acts as an additional low-pass filter specifically for high-order derivatives. We prove (Proposition~1) that the spatiotemporal spectral derivatives achieve spectral convergence with an explicit error bound involving both truncation and filtering terms.
+
+\item \textbf{Normalized forward stepwise BIC (automation innovation).} Each candidate library term is normalized to unit $\ell_2$ norm before regression, eliminating scale bias. Forward stepwise selection with the Bayesian information criterion then determines sparsity automatically---no threshold grid search is required. We prove (Proposition~3) that the BIC criterion selects the true support with probability tending to one under standard restricted eigenvalue and minimum coefficient conditions.
+\end{enumerate}
+
+\textbf{Experimental validation.} We benchmark on the MDBench standard suite, covering four 1D PDEs (Burgers, KdV, Kuramoto--Sivashinsky, non-periodic advection) at five noise levels, plus three higher-dimensional problems (2D advection-diffusion, 2D reaction-diffusion, 2D/3D heat conduction). We compare against three baselines: SR3 with finite differences, \emph{spatial-only} spectral derivatives with exponential filtering (the closest prior method, Schaeffer and McCalla, 2017), and Weak SINDy. The control-variable comparison against spatial-only spectral methods is particularly informative: both use identical exponential filtering and BIC selection, yet the spatiotemporal version recovers the non-periodic advection equation exactly at clean data while the spatial version fails completely (0/1 true terms). On periodic problems, our method achieves comparable or superior accuracy to Weak SINDy at 10--20$\times$ lower computational cost.
+
+\textbf{Fit with AMC.} We believe this manuscript is well-suited to \textit{Applied Mathematics and Computation} because it combines: (i) a genuinely new algorithmic idea (spatiotemporal spectral differentiation for PDE discovery), (ii) rigorous mathematical analysis (three propositions with complete proofs), and (iii) extensive computational validation on a public benchmark against established baselines. The method requires no GPU and runs on a standard CPU, making it reproducible and accessible.
+
+This manuscript has not been published elsewhere and is not under consideration by any other journal. All authors have read and approved the submission. We declare no competing financial or non-financial interests. The code and data are available at \texttt{https://github.com/fzmath/spectral-pde-discovery}.
+
+Thank you for your time and consideration. We look forward to your editorial assessment.
+
+\closing{Sincerely,}
+
+\vspace{0.5cm}
+\textbf{Fuchang Wang}\\
+School of Science, Emergency Management University\\
+No. 465 College Road, Sanhe, Hebei 065201, China\\
+Email: wangfuchang@cidp.edu.cn\\
+\textit{Corresponding author}
+
+\vspace{0.3cm}
+\textbf{Huirong Cao}\\
+School of Science, Langfang Normal University\\
+No. 100 Ai-min Road, Langfang, Hebei 065000, China\\
+Email: huirongcao@126.com
+
+\end{letter}
+\end{document}

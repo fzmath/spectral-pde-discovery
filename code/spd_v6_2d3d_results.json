@@ -1,0 +1,80 @@
+{
+  "advection_diffusion_2d": {
+    "clean": {
+      "true_found": 0,
+      "total": 4,
+      "false_pos": 2,
+      "time": 1.494666576385498,
+      "found": [
+        "u*u_y",
+        "u^2*u_y"
+      ]
+    },
+    "snr_40": {
+      "true_found": 0,
+      "total": 4,
+      "false_pos": 2,
+      "time": 1.732846736907959,
+      "found": [
+        "u*u_y",
+        "u^2*u_y"
+      ]
+    },
+    "snr_20": {
+      "true_found": 0,
+      "total": 4,
+      "false_pos": 2,
+      "time": 2.22395920753479,
+      "found": [
+        "u*u_y",
+        "u^2*u_y"
+      ]
+    }
+  },
+  "heat_soil_uniform_2d_p1": {
+    "clean": {
+      "true_found": 0,
+      "total": 2,
+      "false_pos": 0,
+      "time": 32.32396960258484,
+      "found": []
+    },
+    "snr_40": {
+      "true_found": 0,
+      "total": 2,
+      "false_pos": 0,
+      "time": 23.470354557037354,
+      "found": []
+    },
+    "snr_20": {
+      "true_found": 0,
+      "total": 2,
+      "false_pos": 0,
+      "time": 29.131001710891724,
+      "found": []
+    }
+  },
+  "heat_soil_uniform_3d_p1": {
+    "clean": {
+      "true_found": 0,
+      "total": 3,
+      "false_pos": 0,
+      "time": 4.650677442550659,
+      "found": []
+    },
+    "snr_40": {
+      "true_found": 0,
+      "total": 3,
+      "false_pos": 0,
+      "time": 5.253811597824097,
+      "found": []
+    },
+    "snr_20": {
+      "true_found": 0,
+      "total": 3,
+      "false_pos": 0,
+      "time": 4.91996955871582,
+      "found": []
+    }
+  }
+}

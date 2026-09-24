@@ -1,0 +1,66 @@
+{
+  "burgers": {
+    "clean": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.9967058190073792,
+          "u_xx": 0.10152474159367275
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": true,
+        "coeff_errors": {
+          "u*u_x": 0.0032941809926207988,
+          "u_xx": 0.01524741593672746
+        },
+        "time_s": 0.39766359329223633,
+        "threshold": 0.01
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.994505137242137,
+          "u_xx": 0.09996224516338639
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": true,
+        "coeff_errors": {
+          "u*u_x": 0.005494862757863039,
+          "u_xx": 0.00037754836613612675
+        },
+        "time_s": 0.4725985527038574,
+        "threshold": 0.02
+      },
+      "SPD v2 (ours)": {
+        "recovered": {
+          "u": -0.01856745991613274,
+          "u^2": 0.08900520506937465,
+          "u_x": 0.4348469585303602,
+          "u*u_x": -4.276554039044065,
+          "u^2*u_x": 4.823834730094787,
+          "u*u_xx": 1.1396952874015225,
+          "u^2*u_xx": -1.7228970065603497,
+          "u*u_xxx": -0.27927663500436284,
+          "u^2*u_xxx": 0.5697070160546014
+        },
+        "true_found": 1,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u^2*u_x",
+          "u*u_xx",
+          "u^2*u_xx",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 3.276554039044065,
+          "u_xx": null
+        },
+        "time_s": 3.8568344116210938,
+        "n_terms": 

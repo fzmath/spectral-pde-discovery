@@ -1,0 +1,56 @@
+{
+  "clean": {
+    "FD+STLSQ": {
+      "true_found": 0,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": false,
+      "time_s": 0.3611915111541748
+    },
+    "Spectral+STLSQ": {
+      "true_found": 0,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": false,
+      "time_s": 1.5954465866088867
+    },
+    "SPD (ours)": {
+      "true_found": 2,
+      "total_true": 3,
+      "false_positives": [
+        "u^3",
+        "u",
+        "u^2"
+      ],
+      "exact": false,
+      "time_s": 4.123659610748291
+    }
+  },
+  "snr_40": {
+    "FD+STLSQ": {
+      "true_found": 0,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": false,
+      "time_s": 0.31743907928466797
+    },
+    "Spectral+STLSQ": {
+      "true_found": 0,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": false,
+      "time_s": 1.660762071609497
+    },
+    "SPD (ours)": {
+      "true_found": 3,
+      "total_true": 3,
+      "false_positives": [
+        "u^3",
+        "u",
+        "u^2"
+      ],
+      "exact": false,
+      "time_s": 3.971851348876953
+    }
+  }
+}

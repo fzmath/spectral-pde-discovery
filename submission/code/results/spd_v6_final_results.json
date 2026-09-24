@@ -1,0 +1,263 @@
+{
+  "burgers": {
+    "clean": {
+      "recovered": {
+        "u_xx": 0.09994209990123336,
+        "u*u_x": -1.0007695102730738
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 0.29398512840270996
+    },
+    "snr_40": {
+      "recovered": {
+        "u_xx": 0.09974521186048543,
+        "u*u_x": -1.0008590088883214
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 0.2694110870361328
+    },
+    "snr_30": {
+      "recovered": {
+        "u_xx": 0.10002020930050366,
+        "u*u_x": -1.0015744306906769,
+        "u_xxxx": 8.55947147870412e-05
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [
+        "u_xxxx"
+      ],
+      "exact": false,
+      "time_s": 0.2759058475494385
+    },
+    "snr_20": {
+      "recovered": {
+        "u_xx": 0.0992321226856718,
+        "u*u_x": -0.9961251794754366,
+        "u_xxxx": 8.595506641705775e-05,
+        "u^2*u_xxx": -0.0003564726270986825
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [
+        "u_xxxx",
+        "u^2*u_xxx"
+      ],
+      "exact": false,
+      "time_s": 0.30111122131347656
+    },
+    "snr_10": {
+      "recovered": {
+        "u*u_x": -0.9915361002584236,
+        "u_xx": 0.10306022176353431,
+        "u*u_xxx": -0.001458595561582868,
+        "u_xxxx": 0.00011804127321574627
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [
+        "u*u_xxx",
+        "u_xxxx"
+      ],
+      "exact": false,
+      "time_s": 0.2967336177825928
+    }
+  },
+  "kdv": {
+    "clean": {
+      "recovered": {
+        "u*u_x": -6.0010778480196425,
+        "u_xxx": -0.9994219368482636
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 1.436352252960205
+    },
+    "snr_40": {
+      "recovered": {
+        "u*u_x": -5.993112121751822,
+        "u_xxx": -0.9802988670575195
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 1.7078070640563965
+    },
+    "snr_30": {
+      "recovered": {
+        "u*u_x": -5.910838557995333,
+        "u_xxx": -0.8252190775800416,
+        "u_xxxx": -0.03556809885830586
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [
+        "u_xxxx"
+      ],
+      "exact": false,
+      "time_s": 2.2468674182891846
+    },
+    "snr_20": {
+      "recovered": {
+        "u*u_x": -5.7231687226032975,
+        "u_xxx": -0.40509413234973707
+      },
+      "true_found": 2,
+      "total_true": 2,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 2.1814191341400146
+    },
+    "snr_10": {
+      "recovered": {
+        "u*u_x": -5.5696770873291905,
+        "u*u_xxx": -0.02710138646674209
+      },
+      "true_found": 1,
+      "total_true": 2,
+      "false_positives": [
+        "u*u_xxx"
+      ],
+      "exact": false,
+      "time_s": 2.0003247261047363
+    }
+  },
+  "kuramoto_sivishinky": {
+    "clean": {
+      "recovered": {
+        "u*u_x": -0.9998055197237125,
+        "u_xx": -1.000519566978927,
+        "u_xxxx": -1.0001508939354884
+      },
+      "true_found": 3,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 10.43865156173706
+    },
+    "snr_40": {
+      "recovered": {
+        "u*u_x": -0.746003476565618,
+        "u_xx": -0.20274241446006175
+      },
+      "true_found": 2,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": false,
+      "time_s": 10.808120250701904
+    },
+    "snr_30": {
+      "recovered": {
+        "u*u_x": -0.8098706562418393,
+        "u_xx": -0.29616420638674906,
+        "u_xxxx": -0.013277519130614337
+      },
+      "true_found": 3,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 10.278499126434326
+    },
+    "snr_20": {
+      "recovered": {
+        "u*u_x": -0.753744729961754,
+        "u_xx": -0.19858865191885386,
+        "u_xxxx": -0.0015156549883502542
+      },
+      "true_found": 3,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 10.655484914779663
+    },
+    "snr_10": {
+      "recovered": {
+        "u*u_x": -0.7530312659907596,
+        "u_xx": -0.1757413652339425
+      },
+      "true_found": 2,
+      "total_true": 3,
+      "false_positives": [],
+      "exact": false,
+      "time_s": 10.33878755569458
+    }
+  },
+  "advection1d": {
+    "clean": {
+      "recovered": {
+        "u_x": -0.10002539505331029
+      },
+      "true_found": 1,
+      "total_true": 1,
+      "false_positives": [],
+      "exact": true,
+      "time_s": 7.044405460357666
+    },
+    "snr_40": {
+      "recovered": {
+        "u_x": -0.10010538814879255,
+        "u_xxx": -2.5893245174562543e-08
+      },
+      "true_found": 1,
+      "total_true": 1,
+      "false_positives": [
+        "u_xxx"
+      ],
+      "exact": false,
+      "time_s": 6.804112195968628
+    },
+    "snr_30": {
+      "recovered": {
+        "u*u_x": -0.12985587530435935,
+        "u*u_xxx": -2.638736168698794e-08,
+        "u_xx": -1.3949739390352154e-05
+      },
+      "true_found": 0,
+      "total_true": 1,
+      "false_positives": [
+        "u*u_x",
+        "u*u_xxx",
+        "u_xx"
+      ],
+      "exact": false,
+      "time_s": 6.382712125778198
+    },
+    "snr_20": {
+      "recovered": {
+        "u_x": -0.09958582121205302,
+        "u_xxx": -2.0800083616758806e-08
+      },
+      "true_found": 1,
+      "total_true": 1,
+      "false_positives": [
+        "u_xxx"
+      ],
+      "exact": false,
+      "time_s": 6.28816294670105
+    },
+    "snr_10": {
+      "recovered": {
+        "u_x": -0.10092280516425994,
+        "u_xxx": -3.256650043379774e-08,
+        "u_xxxx": 5.8655105717146725e-12
+      },
+      "true_found": 1,
+      "total_true": 1,
+      "false_positives": [
+        "u_xxx",
+        "u_xxxx"
+      ],
+      "exact": false,
+      "time_s": 6.357717752456665
+    }
+  }
+}

@@ -1,0 +1,1341 @@
+{
+  "burgers": {
+    "clean": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.9967058190073792,
+          "u_xx": 0.10152474159367275
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": true,
+        "coeff_errors": {
+          "u*u_x": 0.0032941809926207988,
+          "u_xx": 0.01524741593672746
+        },
+        "time_s": 0.3660299777984619,
+        "threshold": 0.01
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.994505137242137,
+          "u_xx": 0.09996224516338639
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": true,
+        "coeff_errors": {
+          "u*u_x": 0.005494862757863039,
+          "u_xx": 0.00037754836613612675
+        },
+        "time_s": 0.4008021354675293,
+        "threshold": 0.02
+      },
+      "SPD (ours)": {
+        "recovered": {
+          "u*u_x": -0.8415306883199721
+        },
+        "true_found": 1,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.15846931168002787,
+          "u_xx": null
+        },
+        "time_s": 1.489936351776123,
+        "lasso_alpha": 0.04904712801167624
+      }
+    },
+    "snr_40": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u": 0.11948677670381316,
+          "u^2": -0.34812069521336547,
+          "u*u_x": -1.199866190018773,
+          "u^2*u_x": 0.6039933585919967,
+          "u_xx": 0.06045985346646937,
+          "u*u_xx": -0.08893018312930773
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u^2*u_x",
+          "u*u_xx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.19986619001877304,
+          "u_xx": 0.39540146533530635
+        },
+        "time_s": 0.693958044052124,
+        "threshold": 0.02
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u": 0.11620667645031046,
+          "u^2": -0.3372306995410783,
+          "u_x": -0.16208694169021406,
+          "u*u_x": -0.5115907530717331,
+          "u_xx": 0.029717066600293968,
+          "u*u_xx": -0.08993927584701722,
+          "u^2*u_xx": 0.0638325443044824
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u*u_xx",
+          "u^2*u_xx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.4884092469282669,
+          "u_xx": 0.7028293339970604
+        },
+        "time_s": 0.7819926738739014,
+        "threshold": 0.02
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xx": null
+        },
+        "time_s": 1.6411004066467285,
+        "lasso_alpha": 0.027504978426006386
+      }
+    },
+    "snr_30": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u": 0.11123193404546347,
+          "u^2": -0.32638933719601265,
+          "u_x": -0.20936174933989504,
+          "u*u_x": -0.19933356788836223,
+          "u^2*u_x": -0.04795503995201475,
+          "u_xx": 0.02268580053483002,
+          "u*u_xx": -0.08188688279008341,
+          "u^2*u_xx": 0.06392857668124778
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u^2*u_x",
+          "u*u_xx",
+          "u^2*u_xx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.8006664321116378,
+          "u_xx": 0.7731419946516999
+        },
+        "time_s": 1.2407641410827637,
+        "threshold": 0.005
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u": 0.11667933117521237,
+          "u^2": -0.3331060050613992,
+          "u_x": -0.2283384336137232,
+          "u*u_x": -0.06583644639030367,
+          "u^2*u_x": -0.07963455456632185,
+          "u_xx": 0.006064403041761424,
+          "u*u_xx": -0.023854547971385476,
+          "u^2*u_xx": 0.019827470243565626
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u^2*u_x",
+          "u*u_xx",
+          "u^2*u_xx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9341635536096964,
+          "u_xx": 0.9393559695823858
+        },
+        "time_s": 1.0708777904510498,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xx": null
+        },
+        "time_s": 1.3331170082092285,
+        "lasso_alpha": 0.023619441452565906
+      }
+    },
+    "snr_20": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u^2": -0.11430775131797175,
+          "u_x": -0.24253355455406442,
+          "u*u_x": 0.5797726543468427,
+          "u^2*u_x": -0.4952946173008019
+        },
+        "true_found": 1,
+        "total_true": 2,
+        "false_positives": [
+          "u^2",
+          "u_x",
+          "u^2*u_x"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 1.5797726543468427,
+          "u_xx": null
+        },
+        "time_s": 0.6239721775054932,
+        "threshold": 0.1
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u^2": -0.11409532193001747,
+          "u_x": -0.20097714732495775,
+          "u*u_x": 0.5425105230613115,
+          "u^2*u_x": -0.4856638394717243
+        },
+        "true_found": 1,
+        "total_true": 2,
+        "false_positives": [
+          "u^2",
+          "u_x",
+          "u^2*u_x"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 1.5425105230613116,
+          "u_xx": null
+        },
+        "time_s": 0.5904238224029541,
+        "threshold": 0.1
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xx": null
+        },
+        "time_s": 1.271928071975708,
+        "lasso_alpha": 0.003462926136483097
+      }
+    },
+    "snr_10": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u": 0.09512211769577529,
+          "u^2": -0.2585694661408079,
+          "u_x": -0.09137627171691728,
+          "u*u_x": 0.3218009350393801,
+          "u^2*u_x": -0.323099875523096,
+          "u_xx": 0.005089107398296322,
+          "u*u_xx": -0.03284051523728215,
+          "u^2*u_xx": 0.03243245775461337
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u^2*u_x",
+          "u*u_xx",
+          "u^2*u_xx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 1.3218009350393802,
+          "u_xx": 0.9491089260170368
+        },
+        "time_s": 0.6804826259613037,
+        "threshold": 0.005
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u": 0.29506152559155874,
+          "u^2": -0.6372036809047971,
+          "u_x": -0.08141822650581741,
+          "u*u_x": 0.2940145752571532,
+          "u^2*u_x": -0.28333442723363356
+        },
+        "true_found": 1,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u^2*u_x"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 1.2940145752571532,
+          "u_xx": null
+        },
+        "time_s": 0.5385549068450928,
+        "threshold": 0.01
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xx": null
+        },
+        "time_s": 2.1247503757476807,
+        "lasso_alpha": 0.006536690081985351
+      }
+    }
+  },
+  "kdv": {
+    "clean": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u*u_x": -5.988830771992541,
+          "u^2*u_x": -0.39754740163718827,
+          "u_xxx": -0.9864416601798531,
+          "u*u_xxx": -0.17310814891243206
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u^2*u_x",
+          "u*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.0018615380012431497,
+          "u_xxx": 0.01355833982014687
+        },
+        "time_s": 4.092194557189941,
+        "threshold": 0.1
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u_x": -0.31924869167525166,
+          "u*u_x": -2.302223327937801,
+          "u^2*u_x": -10.425695109774065,
+          "u_xxx": -0.5381416932554821,
+          "u*u_xxx": -2.4433764092307113,
+          "u^2*u_xxx": 0.9224607306325112
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u_x",
+          "u^2*u_x",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.6162961120103665,
+          "u_xxx": 0.4618583067445179
+        },
+        "time_s": 3.840627670288086,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xxx": null
+        },
+        "time_s": 4.817960739135742,
+        "lasso_alpha": 0.00254058855688112
+      }
+    },
+    "snr_40": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u_x": -0.6807026904497563,
+          "u*u_x": -1.3773916659888117,
+          "u^2*u_x": 1.300647757762279,
+          "u_xxx": -0.01640045441923732
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u_x",
+          "u^2*u_x"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.770434722335198,
+          "u_xxx": 0.9835995455807627
+        },
+        "time_s": 3.3458755016326904,
+        "threshold": 0.01
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u_x": -0.6841108440504284,
+          "u*u_x": -1.3519082743188389,
+          "u^2*u_x": 1.4153758319492813,
+          "u_xxx": -0.003273114493023588,
+          "u*u_xxx": -0.007409287945407128,
+          "u^2*u_xxx": 0.008790123747881545
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u_x",
+          "u^2*u_x",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.7746819542801936,
+          "u_xxx": 0.9967268855069764
+        },
+        "time_s": 3.656468391418457,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xxx": null
+        },
+        "time_s": 2.3317208290100098,
+        "lasso_alpha": 0.0076573312963311106
+      }
+    },
+    "snr_30": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u_x": -0.6433110072138215,
+          "u*u_x": -1.760176185439639,
+          "u^2*u_x": 2.2916752822743627,
+          "u_xxx": -0.010830704554922521,
+          "u*u_xxx": -0.028923581804421228,
+          "u^2*u_xxx": 0.038282726861565974
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u_x",
+          "u^2*u_x",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.7066373024267268,
+          "u_xxx": 0.9891692954450775
+        },
+        "time_s": 3.0119078159332275,
+        "threshold": 0.005
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u": 0.0027707807541717407,
+          "u^2": -0.008794305095827286,
+          "u_x": -0.6109955753885387,
+          "u*u_x": -2.0163935201055088,
+          "u^2*u_x": 3.1613017797478236,
+          "u_xx": -0.001054923419319738,
+          "u*u_xx": 0.010804702605194907,
+          "u^2*u_xx": -0.01906340581011385,
+          "u_xxx": -0.002934591723851296,
+          "u*u_xxx": -0.010357520304410962,
+          "u^2*u_xxx": 0.01626247295166464
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u^2*u_x",
+          "u_xx",
+          "u*u_xx",
+          "u^2*u_xx",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.6639344133157485,
+          "u_xxx": 0.9970654082761488
+        },
+        "time_s": 3.051943778991699,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xxx": null
+        },
+        "time_s": 3.645801544189453,
+        "lasso_alpha": 0.004218512511950818
+      }
+    },
+    "snr_20": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u_x": -0.5166936720866017,
+          "u*u_x": -2.581254135479085,
+          "u^2*u_x": 4.95702985711545,
+          "u*u_xx": -0.00936812872590037,
+          "u^2*u_xx": 0.02359345149061891,
+          "u_xxx": -0.006864126847532237,
+          "u*u_xxx": -0.05206127088261947,
+          "u^2*u_xxx": 0.09366726414623905
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u_x",
+          "u^2*u_x",
+          "u*u_xx",
+          "u^2*u_xx",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.5697909774201525,
+          "u_xxx": 0.9931358731524678
+        },
+        "time_s": 3.1736650466918945,
+        "threshold": 0.005
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u": 0.002227339770309257,
+          "u^2": -0.010680095782715575,
+          "u_x": -0.49804478615636316,
+          "u*u_x": -1.7294397813644236,
+          "u^2*u_x": 3.7964320281235877,
+          "u^2*u_xx": 0.001585895989311704,
+          "u_xxx": -0.0018644902433669272,
+          "u*u_xxx": -0.011985560713464134,
+          "u^2*u_xxx": 0.023193111603010377
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u^2*u_x",
+          "u^2*u_xx",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.7117600364392628,
+          "u_xxx": 0.9981355097566331
+        },
+        "time_s": 2.228189706802368,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xxx": null
+        },
+        "time_s": 2.0031561851501465,
+        "lasso_alpha": 0.004545419193926628
+      }
+    },
+    "snr_10": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u_x": -0.49655565326697226,
+          "u*u_x": 1.124247214971529,
+          "u^2*u_x": -1.3984594607887704,
+          "u_xxx": -0.009003766625368836,
+          "u*u_xxx": 0.023348494809214415,
+          "u^2*u_xxx": -0.030240339420957885
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u_x",
+          "u^2*u_x",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 1.187374535828588,
+          "u_xxx": 0.9909962333746312
+        },
+        "time_s": 3.1203525066375732,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u": 0.018012741959004857,
+          "u^2": -0.03624496929974239,
+          "u_x": -0.29320049193229014,
+          "u*u_x": 0.6805786604301531,
+          "u^2*u_x": -0.6473403814851165,
+          "u_xx": -0.002237285494079873,
+          "u*u_xx": 0.01276425564187587,
+          "u^2*u_xx": -0.013781684961332315,
+          "u_xxx": -0.0016698008148473339,
+          "u*u_xxx": 0.004758178324798704,
+          "u^2*u_xxx": -0.005158302310160074
+        },
+        "true_found": 2,
+        "total_true": 2,
+        "false_positives": [
+          "u",
+          "u^2",
+          "u_x",
+          "u^2*u_x",
+          "u_xx",
+          "u*u_xx",
+          "u^2*u_xx",
+          "u*u_xxx",
+          "u^2*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 1.1134297767383587,
+          "u_xxx": 0.9983301991851526
+        },
+        "time_s": 3.2659358978271484,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 2,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xxx": null
+        },
+        "time_s": 3.0921621322631836,
+        "lasso_alpha": 0.003647284055804702
+      }
+    }
+  },
+  "kuramoto_sivishinky": {
+    "clean": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.9911502931700563,
+          "u_xx": -1.0114800850618293,
+          "u_xxxx": -1.015602655276362
+        },
+        "true_found": 3,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": true,
+        "coeff_errors": {
+          "u*u_x": 0.008849706829943682,
+          "u_xx": 0.011480085061829293,
+          "u_xxxx": 0.015602655276361954
+        },
+        "time_s": 4.4726245403289795,
+        "threshold": 0.02
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.9913278388127723,
+          "u_xx": -0.9914895054851536,
+          "u_xxxx": -0.9913541472590526
+        },
+        "true_found": 3,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": true,
+        "coeff_errors": {
+          "u*u_x": 0.00867216118722769,
+          "u_xx": 0.008510494514846423,
+          "u_xxxx": 0.008645852740947424
+        },
+        "time_s": 1.3997540473937988,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xx": null,
+          "u_xxxx": null
+        },
+        "time_s": 11.697838068008423,
+        "lasso_alpha": 0.0010890589454831403
+      }
+    },
+    "snr_40": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u": 0.058582279747718895,
+          "u*u_x": -0.11355974436181157,
+          "u_xx": 0.132407947506517,
+          "u^2*u_xx": -0.008507543664649411,
+          "u*u_xxx": -0.001444643261620162,
+          "u_xxxx": 0.0011432578462497456
+        },
+        "true_found": 3,
+        "total_true": 3,
+        "false_positives": [
+          "u",
+          "u^2*u_xx",
+          "u*u_xxx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.8864402556381884,
+          "u_xx": 1.132407947506517,
+          "u_xxxx": 1.0011432578462498
+        },
+        "time_s": 4.54211950302124,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u": 0.007739496333075775,
+          "u*u_x": -0.07124789603877243,
+          "u_xx": 0.007620975354385426
+        },
+        "true_found": 2,
+        "total_true": 3,
+        "false_positives": [
+          "u"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9287521039612275,
+          "u_xx": 1.0076209753543854,
+          "u_xxxx": null
+        },
+        "time_s": 3.050049066543579,
+        "threshold": 0.005
+      },
+      "SPD (ours)": {
+        "recovered": {
+          "u*u_x": -0.07375246757683547,
+          "u_xx": 0.010952265764840681
+        },
+        "true_found": 2,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9262475324231645,
+          "u_xx": 1.0109522657648407,
+          "u_xxxx": null
+        },
+        "time_s": 7.621430397033691,
+        "lasso_alpha": 0.0007067667859177321
+      }
+    },
+    "snr_30": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u": 0.0041627899834500125,
+          "u*u_x": -0.05914473848449123,
+          "u_xx": 0.008782714240272264,
+          "u^2*u_xx": -0.0017678003076910878
+        },
+        "true_found": 2,
+        "total_true": 3,
+        "false_positives": [
+          "u",
+          "u^2*u_xx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9408552615155088,
+          "u_xx": 1.0087827142402723,
+          "u_xxxx": null
+        },
+        "time_s": 2.179943323135376,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.05218638649734076
+        },
+        "true_found": 1,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9478136135026592,
+          "u_xx": null,
+          "u_xxxx": null
+        },
+        "time_s": 1.6877384185791016,
+        "threshold": 0.005
+      },
+      "SPD (ours)": {
+        "recovered": {
+          "u": 0.0003256102032560695,
+          "u*u_x": -0.058950754597763874,
+          "u_xx": 0.0031920735553447738,
+          "u^2*u_xx": -0.0006261766987034276
+        },
+        "true_found": 2,
+        "total_true": 3,
+        "false_positives": [
+          "u",
+          "u^2*u_xx"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9410492454022361,
+          "u_xx": 1.0031920735553448,
+          "u_xxxx": null
+        },
+        "time_s": 11.238340377807617,
+        "lasso_alpha": 0.00034034213522039455
+      }
+    },
+    "snr_20": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.020623594523264177
+        },
+        "true_found": 1,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9793764054767358,
+          "u_xx": null,
+          "u_xxxx": null
+        },
+        "time_s": 1.824948787689209,
+        "threshold": 0.005
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u*u_x": -0.014632829657943847
+        },
+        "true_found": 1,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9853671703420561,
+          "u_xx": null,
+          "u_xxxx": null
+        },
+        "time_s": 1.8406131267547607,
+        "threshold": 0.005
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": null,
+          "u_xx": null,
+          "u_xxxx": null
+        },
+        "time_s": 6.179415702819824,
+        "lasso_alpha": 0.009988378451821005
+      }
+    },
+    "snr_10": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u": 0.004010298133877746,
+          "u_x": -0.0018913958359585547,
+          "u*u_x": -0.0024681659581041234
+        },
+        "true_found": 1,
+        "total_true": 3,
+        "false_positives": [
+          "u",
+          "u_x"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9975318340418958,
+          "u_xx": null,
+          "u_xxxx": null
+        },
+        "time_s": 1.0345277786254883,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {
+          "u": 0.004013697222716405,
+          "u*u_x": -0.0015515860673080925
+        },
+        "true_found": 1,
+        "total_true": 3,
+        "false_positives": [
+          "u"
+        ],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9984484139326919,
+          "u_xx": null,
+          "u_xxxx": null
+        },
+        "time_s": 0.916480541229248,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {
+          "u*u_x": -0.002263534157432416
+        },
+        "true_found": 1,
+        "total_true": 3,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u*u_x": 0.9977364658425676,
+          "u_xx": null,
+          "u_xxxx": null
+        },
+        "time_s": 6.318365097045898,
+        "lasso_alpha": 0.0025764201203567257
+      }
+    }
+  },
+  "advection1d": {
+    "clean": {
+      "FD+STLSQ": {
+        "recovered": {
+          "u_x": -0.1000027284026146
+        },
+        "true_found": 1,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": true,
+        "coeff_errors": {
+          "u_x": 2.7284026145879547e-05
+        },
+        "time_s": 1.5156233310699463,
+        "threshold": 0.005
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.3709115982055664,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 3.7941200733184814,
+        "lasso_alpha": 0.0035015353114362887
+      }
+    },
+    "snr_40": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.21467304229736328,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.46868371963500977,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 42.003676414489746,
+        "lasso_alpha": 7.759409062119352e-05
+      }
+    },
+    "snr_30": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.25109362602233887,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.33832311630249023,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 8.192806243896484,
+        "lasso_alpha": 0.0002491560992294384
+      }
+    },
+    "snr_20": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.40553808212280273,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.49793028831481934,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 13.013784408569336,
+        "lasso_alpha": 0.0017833061277660366
+      }
+    },
+    "snr_10": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.31778669357299805,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 0.469390869140625,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_x": null
+        },
+        "time_s": 11.2272047996521,
+        "lasso_alpha": 0.0027725778831823155
+      }
+    }
+  },
+  "heat_soil_uniform_1d_p1": {
+    "clean": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.07114291191101074,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.2533423900604248,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 4.368499517440796,
+        "lasso_alpha": 0.22222665534190578
+      }
+    },
+    "snr_40": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.04684329032897949,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.2024233341217041,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 3.9856491088867188,
+        "lasso_alpha": 0.13262184866171703
+      }
+    },
+    "snr_30": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.05476522445678711,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.24063444137573242,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 3.616913080215454,
+        "lasso_alpha": 0.053043057306000944
+      }
+    },
+    "snr_20": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.051863670349121094,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.2420041561126709,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 5.036365985870361,
+        "lasso_alpha": 0.007023871841853788
+      }
+    },
+    "snr_10": {
+      "FD+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.06088972091674805,
+        "threshold": 0.001
+      },
+      "Spectral+STLSQ": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 0.2626175880432129,
+        "threshold": 0.001
+      },
+      "SPD (ours)": {
+        "recovered": {},
+        "true_found": 0,
+        "total_true": 1,
+        "false_positives": [],
+        "exact": false,
+        "coeff_errors": {
+          "u_xx": null
+        },
+        "time_s": 3.8578455448150635,
+        "lasso_alpha": 0.0066507576224436905
+      }
+    }
+  }
+}
