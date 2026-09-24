@@ -415,14 +415,14 @@ Figure \ref{fig:1d} provides a visual summary of the recovery rates across all 1
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{fig1_recovery_rate.pdf}
-\caption{True term recovery rates for four one-dimensional PDEs across five noise levels. The proposed method (SPD) shows particular strength on the advection and Kuramoto--Sivashinsky equations.}
+\caption{True term recovery rates for four one-dimensional PDEs across five noise levels.}
 \label{fig:1d}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{fig2_advection.pdf}
-\caption{Detailed results for the advection equation (non-periodic). Left: recovery rate; right: number of false positives. The proposed method recovers the true term at most noise levels while SR3 with finite differences fails completely at clean.}
+\caption{Advection equation (non-periodic): recovery rate (left) and false positives (right).}
 \label{fig:adv}
 \end{figure}
 
@@ -514,7 +514,7 @@ Figure \ref{fig:2d} summarizes the recovery rates across all three 2D PDEs.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{fig3_2d_results.pdf}
-\caption{True term recovery rates for three two-dimensional PDEs across three noise levels. The proposed method (SPD) recovers both diffusion terms of the non-periodic heat conduction equation at snr 40 and snr 20, where both baselines fail completely.}
+\caption{True term recovery rates for three two-dimensional PDEs across three noise levels.}
 \label{fig:2d}
 \end{figure}
 
@@ -645,7 +645,7 @@ Figure \ref{fig:time} compares the computational cost. The proposed method is si
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.85\textwidth]{fig4_timing.pdf}
-\caption{Average computational time per experiment. The proposed method (SPD) avoids the threshold sweep and multi-scale integration, resulting in a 10--20$\times$ speedup over Weak SINDy and a 3--4$\times$ speedup over SR3 with grid search.}
+\caption{Average wall-clock time per experiment. SPD avoids the threshold sweep and multi-scale integration.}
 \label{fig:time}
 \end{figure}
 
