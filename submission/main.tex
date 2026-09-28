@@ -649,6 +649,31 @@ Figure \ref{fig:time} compares the computational cost. The proposed method is si
 \label{fig:time}
 \end{figure}
 
+\subsection{Generalization and coefficient accuracy}
+\label{sec:generalization}
+
+The experiments above identify the PDE on the same data used for derivative computation. To verify that the discovered model generalizes, we split each dataset along the time axis: the first 70\% of time steps are used for identification, and the remaining 30\% are used only to evaluate the PDE residual `$`\|\hat u_t - \Theta(u)\hat\xi\|_2 / \|u_t\|_2`$. Table~\ref{tab:gen} reports both the relative coefficient error `$`\|\hat\xi - \xi^*\|_2 / \|\xi^*\|_2`$ and the held-out residual.
+
+\begin{table}[H]
+\centering
+\caption{Coefficient accuracy and held-out PDE residual (clean data, 70/30 time split).}
+\label{tab:gen}
+\begin{tabular}{lccc}
+\hline
+Problem & True terms & Coef.\ rel.\ error & Held-out residual \\
+\hline
+Burgers & 2/2 (0 FP) & 0.001 & 0.076 \\
+KdV & 2/2 (0 FP) & 0.001 & 0.085 \\
+Kuramoto--Sivashinsky & 3/3 (0 FP) & 0.001 & 0.184 \\
+Advection & 1/1 (0 FP) & 0.001 & 0.054 \\
+\hline
+\end{tabular}
+\end{table}
+
+All four benchmark problems recover the complete true support with no false positives on the training split, and the recovered coefficients match the ground truth to within 0.2\%. The held-out PDE residual ranges from 5\% (advection) to 18\% (KS), with the larger error for KS attributable to the fourth-order derivative, which is more sensitive to spectral filtering on the unseen time segment. These results indicate that the discovered PDE generalizes beyond the training data rather than fitting a single noisy realization.
+
+Computational complexity. The spatiotemporal FFT costs `$`O(N \log N)`$ where `$`N = N_x N_t`$ is the grid size. Building the candidate library costs `$`O(PN)`$ for `$`P`$ features. The weak-form integration costs `$`O(MPN)`$ where `$`M`$ is the number of test functions; since `$`M \ll N`$, this is dominated by the FFT. Forward stepwise BIC evaluates at most `$`K_{\max}P`$ candidate regressions, each costing `$`O(MP)`$, giving `$`O(K_{\max} P^2 M)`$ overall---modest compared with the `$`O(PN)`$ library construction when `$`K_{\max} \ll N`$.
+
 \section{Discussion}
 \label{sec:discussion}
 

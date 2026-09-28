@@ -1,0 +1,54 @@
+{
+  "burgers": {
+    "dataset": "burgers",
+    "true_found": 2,
+    "total_true": 2,
+    "false_positives": [],
+    "n_fp": 0,
+    "coefficient_rel_error": 0.0009989833968188223,
+    "test_residual_rel": 0.07632829927672967,
+    "recovered_coefs": {
+      "u_xx": 0.10002887550992995,
+      "u*u_x": -1.001003550551949
+    }
+  },
+  "kdv": {
+    "dataset": "kdv",
+    "true_found": 2,
+    "total_true": 2,
+    "false_positives": [],
+    "n_fp": 0,
+    "coefficient_rel_error": 0.0005459763322432066,
+    "test_residual_rel": 0.08529550286933962,
+    "recovered_coefs": {
+      "u*u_x": -6.0026710892008035,
+      "u_xxx": -0.9980265212871603
+    }
+  },
+  "kuramoto_sivishinky": {
+    "dataset": "kuramoto_sivishinky",
+    "true_found": 3,
+    "total_true": 3,
+    "false_positives": [],
+    "n_fp": 0,
+    "coefficient_rel_error": 0.0007777086394063888,
+    "test_residual_rel": 0.18402063997686618,
+    "recovered_coefs": {
+      "u*u_x": -0.9999421110668222,
+      "u_xx": -1.0011067757138497,
+      "u_xxxx": -1.0007656295279508
+    }
+  },
+  "advection1d": {
+    "dataset": "advection1d",
+    "true_found": 1,
+    "total_true": 1,
+    "false_positives": [],
+    "n_fp": 0,
+    "coefficient_rel_error": 0.0014227988431673997,
+    "test_residual_rel": 0.054309677332639694,
+    "recovered_coefs": {
+      "u_x": -0.10014227988431675
+    }
+  }
+}
