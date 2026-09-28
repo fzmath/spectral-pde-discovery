@@ -75,6 +75,8 @@ Spectral methods offer exponential convergence for smooth functions \cite{canuto
 
 To address non-periodic problems, Chebyshev spectral methods have been proposed \cite{kopriva2009implementing}. These require data sampled on Chebyshev--Gauss--Lobatto grids. Experimental data rarely use such grids. Windowing techniques can reduce Gibbs phenomena but introduce additional errors.
 
+Neural approaches offer an alternative to sparse regression. Physics-informed neural networks \cite{raissi2019physics} encode the PDE residual into the loss of a neural network, but do not produce interpretable sparse equations. Neural operators \cite{li2021fourier} learn solution maps between function spaces and scale well to parametric problems, yet they also lack equation-level interpretability. Hybrid symbolic--neural methods such as PDE-Net~2.0 \cite{long2019pde} and DL-PDE \cite{xu2020dlpde} combine convolutional layers with symbolic differentiation, bridging the gap between black-box prediction and interpretable discovery. The present work follows the sparse-regression line, in which the discovered equations are explicitly sparse and interpretable. For a broader survey of machine learning for PDEs, we refer to Brunton and Kutz \cite{brunton2023machine}.
+
 \subsection{Model selection in sparse regression}
 
 The choice of sparsity level is critical in sparse regression. Information criteria such as the Akaike information criterion (AIC) and the Bayesian information criterion (BIC) \cite{schwarz1978estimating} provide principled ways to select model complexity. Forward stepwise regression adds features one at a time based on their contribution to model fit. Combined with an information criterion for stopping, it offers a computationally efficient alternative to $\ell_1$ regularization. It also provides automatic model selection.
@@ -175,7 +177,7 @@ E_{\mathrm{filter}} \le \sum_{(k_x,k_t)\in K_N} |k_x|^m |1-\phi|\,|\hat{u}| \le 
 where the last step follows from the Fourier inversion formula and the triangle inequality. Setting $C_\phi=\|\partial_x^m u\|_{L^1}$ completes the proof.
 \end{proof}
 
-This result holds for periodic smooth functions. For non-periodic data, periodic extension introduces boundary discontinuities and the Fourier coefficients decay algebraically rather than super-algebraically; the rate $N_x^{-q}$ no longer applies. The non-periodic case is addressed separately through the traveling-wave concentration analysis (Proposition~\ref{prop:traveling}) and the empirical filtering experiments. For periodic problems, the spectral result contrasts with finite differences, whose $m$-th order error is $O(\Delta x^p)$ for a $p$-th order scheme.
+This result holds for periodic smooth functions. For non-periodic data, periodic extension introduces boundary discontinuities and the Fourier coefficients decay algebraically rather than super-algebraically; the $N_x^{-r}$ spectral rate no longer applies. The non-periodic case is addressed separately through the traveling-wave concentration analysis (Proposition~\ref{prop:traveling}) and the empirical filtering experiments. For periodic problems, the spectral result contrasts with finite differences, whose $m$-th order error is $O(\Delta x^p)$ for a $p$-th order scheme.
 
 \subsubsection{Traveling wave solutions and non-periodic problems}
 
