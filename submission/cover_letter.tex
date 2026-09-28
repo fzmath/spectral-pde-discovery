@@ -17,7 +17,7 @@ We submit our manuscript entitled \textbf{``Spatiotemporal spectral derivatives 
 \textbf{What we do.} We propose three connected changes:
 
 \begin{enumerate}
-\item \textbf{Spatiotemporal spectral derivatives.} Instead of transforming space at each time step independently, we apply a single 2D Fourier transform over the joint space-time grid. For a traveling wave $u(x,t)=f(x-ct)$, the spectrum lies along the line $k_t=-ck_x$ (Proposition~2), whereas boundary Gibbs noise spreads isotropically. A 2D filter can therefore separate signal from boundary artifacts. This is the key difference from spatial-only spectral methods (Schaeffer and McCalla, 2017).
+\item \textbf{Spatiotemporal spectral derivatives.} Instead of transforming space at each time step independently, we apply a single 2D Fourier transform over the joint space-time grid. For a traveling wave $u(x,t)=f(x-ct)$, the spectrum lies along the line $k_t=-ck_x$ (Proposition~2), whereas boundary Gibbs noise spreads isotropically. A 2D filter attenuates boundary artifacts relative to this ridge. This is the key difference from spatial-only spectral methods (Schaeffer and McCalla, 2017).
 
 \item \textbf{Spectral weak form.} The regression is set up in weak form: both sides of the PDE are integrated against compactly supported Gaussian test functions. This integration averages out high-frequency noise in the spectrally computed derivatives, particularly for high-order terms. We give a spectral convergence error bound (Proposition~1).
 
@@ -27,10 +27,10 @@ We submit our manuscript entitled \textbf{``Spatiotemporal spectral derivatives 
 \textbf{What we find.} On the MDBench benchmark (four 1D PDEs at five noise levels, plus three 2D/3D problems):
 
 \begin{itemize}
-\item On the non-periodic advection equation---where spatial-only spectral derivatives fail completely (0/1 terms recovered)---our method recovers both terms exactly at clean data.
+\item On the non-periodic advection equation---where spatial-only spectral derivatives fail completely (0/1 terms recovered)---our method recovers the true term at clean data.
 \item On Burgers, all true terms are recovered at every noise level including SNR~10.
-\item On KdV and Kuramoto--Sivashinsky, exact recovery is achieved at three and two noise levels, respectively.
-\item On periodic problems, accuracy is comparable to Weak SINDy while runtime is 10--20 times lower.
+\item On KdV and Kuramoto--Sivashinsky, recovery is achieved at three and two noise levels, respectively.
+\item On periodic problems, accuracy is comparable to Weak SINDy while runtime is substantially lower.
 \end{itemize}
 
 We compare against three baselines: finite-difference SR3, spatial-only spectral derivatives with exponential filtering, and Weak SINDy. The control-variable comparison with spatial-only spectral methods isolates the effect of the spatiotemporal transform.
