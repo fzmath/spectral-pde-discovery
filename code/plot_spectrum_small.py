@@ -46,6 +46,6 @@ ax.set_title('(c) Spatial-only', fontsize=9)
 ax.set_xlim([-30, 30])
 
 plt.tight_layout()
-out = Path(r"H:\2026科研\Spectral-PDE-Discovery\submission\figs\spectrum_viz.pdf")
-plt.savefig(out, bbox_inches='tight', dpi=150)
+out = Path(r"H:\2026科研\Spectral-PDE-Discovery\submission\figs\spectrum_viz.png")
+plt.savefig(out, bbox_inches='tight', dpi=300)
 print(f"Saved {out}, size = {out.stat().st_size/1024:.0f} KB")

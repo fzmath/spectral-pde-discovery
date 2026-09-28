@@ -142,7 +142,7 @@ We now provide theoretical justification for the key components of the proposed 
 \label{prop:spectral}
 Let $u(x,t) \in C^\infty([0,L_x]\times[0,L_t])$ be a smooth periodic function with Fourier coefficients $\hat{u}(k_x,k_t)$ decaying faster than any polynomial: for every $q>0$, there exists $C_q>0$ such that $|\hat{u}(k_x,k_t)| \le C_q (1+|k_x|+|k_t|)^{-q}$. Then the spatiotemporal spectral derivative of order $m$ satisfies
 \begin{equation}
-\|\partial_x^m u - \mathcal{D}_x^m u_N\|_\infty \le C_{m,q} N_x^{-q} + C_\phi \epsilon_{\mathrm{tol}},
+\|\partial_x^m u - \mathcal{D}_x^m u_N\|_\infty \le C_{m,r} N_x^{-r} + C_\phi(u,m) \epsilon_{\mathrm{tol}},
 \end{equation}
 where $\mathcal{D}_x^m$ is the discrete spectral derivative operator, $N_x$ is the number of spatial grid points, and $C_\phi$ depends on the filter parameters.
 \end{proposition}
@@ -467,7 +467,7 @@ The fixed hyperparameters $\lambda = 2.5`$ and test-function width $\sigma/L = 0
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{figs/spectrum_viz.pdf}
+\includegraphics[width=0.9\textwidth]{figs/spectrum_viz.png}
 \caption{Spatiotemporal spectrum of the advection solution. (a) Raw 2D Fourier transform: energy concentrates along the characteristic line $k_t = -ck_x`$ (red dashed). (b) After exponential filtering: high-frequency boundary ringing is suppressed. (c) Spatial-only spectrum averaged over time: the broad, slowly decaying profile reflects Gibbs ringing from the non-periodic boundary.}
 \label{fig:spectrum}
 \end{figure}
