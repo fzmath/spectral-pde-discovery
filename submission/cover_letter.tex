@@ -21,7 +21,7 @@ We submit our manuscript entitled \textbf{``Spatiotemporal spectral derivatives 
 
 \item \textbf{Spectral weak form.} The regression is set up in weak form: both sides of the PDE are integrated against compactly supported Gaussian test functions. This integration averages out high-frequency noise in the spectrally computed derivatives, particularly for high-order terms. We give a spectral convergence error bound (Proposition~1).
 
-\item \textbf{Normalized forward stepwise BIC.} Each candidate term is scaled to unit $\ell_2$ norm before regression. Forward stepwise selection with BIC then chooses the support automatically, with no threshold grid search. Under standard restricted-eigenvalue and minimum-coefficient conditions, the selected support is consistent (Proposition~3).
+\item \textbf{Normalized forward stepwise BIC.} Each candidate term is scaled to unit $\ell_2$ norm before regression. Forward stepwise selection with BIC then chooses the support automatically, with no threshold grid search. Under standard restricted-eigenvalue and minimum-coefficient conditions, the global BIC criterion selects the true support with probability tending to one; the forward stepwise search provides an efficient greedy approximation (Proposition~3).
 \end{enumerate}
 
 \textbf{What we find.} On the MDBench benchmark (four 1D PDEs at five noise levels, plus three 2D/3D problems):
@@ -37,7 +37,7 @@ We compare against three baselines: finite-difference SR3, spatial-only spectral
 
 \textbf{Why AMC.} The paper combines a numerical algorithm (spatiotemporal spectral differentiation), error analysis (three propositions), and benchmark experiments on a public dataset. It does not require GPU acceleration and runs on a standard CPU. We believe this fits the scope of \textit{Applied Mathematics and Computation}.
 
-This manuscript has not been published elsewhere and is not under consideration by another journal. All authors have approved the submission. We declare no competing interests. Code is available at \texttt{https://github.com/fzmath/spectral-pde-discovery}.
+This manuscript has not been published elsewhere and is not under consideration by another journal. All authors have approved the submission. We declare no competing interests. This work was supported by the Langfang Science and Technology Research and Development Program (Grant No. 2024011015). No generative AI was used in the preparation of this manuscript. Code is available at \texttt{https://github.com/fzmath/spectral-pde-discovery}.
 
 Thank you for your consideration.
 
